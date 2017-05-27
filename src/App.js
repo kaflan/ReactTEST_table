@@ -1,5 +1,3 @@
-import './App.css';
-
 import React, { Component } from 'react';
 import tabs from './tabs.json';
 import {
