@@ -32,7 +32,7 @@ const RouteConfigExample = () => (
 
             </ul>
             <Switch>
-                <Redirect from="/" to="/dummyTable" />
+                <Redirect from="/" to="/dummyList" />
             </Switch>
             {tabs.map((route, i) => (
                 <RouteWithSubRoutes key={i} route={route} />
