@@ -13,8 +13,13 @@ const renderComp = (props) => {
 };
 const RouteWithSubRoutes = (props) => {
     const path = `/${props.route.id}`;
-    return <Route component={renderComp(props)} path={path} />;
+    const locationPath = window.location.pathname;
+    if (path === locationPath) {
+        return <Route component={renderComp(props)} path={path} />;
+    }
+    return null;
 };
+
 const RouteConfigExample = () => (
     <Router>
         <div>
@@ -27,8 +32,8 @@ const RouteConfigExample = () => (
 
             </ul>
             <Switch>
-                <Redirect from="/" to="/dummyTable"/>
-            </Switch>    
+                <Redirect from="/" to="/dummyTable" />
+            </Switch>
             {tabs.map((route, i) => (
                 <RouteWithSubRoutes key={i} route={route} />
             ))}
